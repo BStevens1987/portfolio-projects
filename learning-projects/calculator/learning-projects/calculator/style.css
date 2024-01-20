@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  outline: 1px solid red;
+  box-sizing: border-box;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  margin: auto;
+}
+
+#screen {
+  flex: 1;
+}
+
+#row {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+#button {
+  flex: 1;
+}
