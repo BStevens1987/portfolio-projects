@@ -1,6 +1,7 @@
 * {
   margin: 0;
-  outline: 1px solid red;
+  padding: 0;
+  border: 1px solid black;
   box-sizing: border-box;
 }
 
@@ -14,6 +15,7 @@
 
 #screen {
   flex: 1;
+  background-color: grey;
 }
 
 #row {
