@@ -163,11 +163,8 @@ buttonAC.addEventListener('click', () => {
   reset('');
 });
 
-const buttonSign = document.querySelector("#buttonr1c2");
-buttonSign.textContent = '+/-';
-buttonSign.addEventListener('click', () => {
-  sign();
-});
+const buttonPercent = document.querySelector("#buttonr1c2");
+buttonPercent.textContent = '√';
 
 const buttonExponent = document.querySelector("#buttonr1c3");
 buttonExponent.textContent = '**';
@@ -265,8 +262,13 @@ buttonDecimal.addEventListener('click', () => {
   decimal();
 });
 
-const buttonPercent = document.querySelector("#buttonr5c3");
-buttonPercent.textContent = '%';
+const buttonSign = document.querySelector("#buttonr5c3");
+buttonSign.textContent = '+/-';
+buttonSign.addEventListener('click', () => {
+  sign();buttonPercent.addEventListener('click', () => {
+    sign();
+  });
+});
 
 const buttonEquals = document.querySelector("#buttonr5c4");
 buttonEquals.textContent = '=';
