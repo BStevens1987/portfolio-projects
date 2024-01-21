@@ -13,7 +13,7 @@ for(let row = 1; row <= 5; row++) {
 };
 
 function add (a, b) {
-  return a + b;
+  return Number(a) + Number(b);
 };
 
 function subtract (a, b) {
@@ -59,8 +59,6 @@ function operate(a, b, operation) {
     return exponent(a, b);
   }
 };
-
-
 
 const display = document.querySelector('#display');
 
@@ -142,6 +140,18 @@ buttonFour.addEventListener('click', () => {
 
 const buttonAdd= document.querySelector("#buttonr3c4");
 buttonAdd.textContent = '+';
+buttonAdd.addEventListener('click', () => {
+  if (op==='') {
+    op = 'add';
+  }
+  else {
+    op = 'add';
+    num1 = operate(num1, num2, op);
+    num2 = 'e';
+    disp = num1;
+    display.textContent = disp;
+  }
+});
 
 const buttonThree = document.querySelector("#buttonr4c1");
 buttonThree.textContent = '3';
