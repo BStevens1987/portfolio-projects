@@ -157,6 +157,20 @@ function sign() {
   }
 };
 
+function equals () {
+  if (op=== '' || num1 === 'e' || num2 === 'e') {
+  }
+  else if (op == 'divide' && Number(num2) == 0) {
+    reset('Nice Try');
+  }
+  else {
+    num1 = operate(num1, num2, op);
+    num2 = 'e';
+    disp = num1;
+    display.textContent = disp;
+  };
+};
+
 const buttonAC = document.querySelector("#buttonr1c1");
 buttonAC.textContent = 'AC';
 buttonAC.addEventListener('click', () => {
@@ -271,15 +285,5 @@ buttonSign.addEventListener('click', () => {
 const buttonEquals = document.querySelector("#buttonr5c4");
 buttonEquals.textContent = '=';
 buttonEquals.addEventListener('click', () => {
-  if (op=== '' || num1 === 'e' || num2 === 'e') {
-  }
-  else if (op == 'divide' && Number(num2) == 0) {
-    reset('Nice Try');
-  }
-  else {
-    num1 = operate(num1, num2, op);
-    num2 = 'e';
-    disp = num1;
-    display.textContent = disp;
-  }
+  equals();
 });
