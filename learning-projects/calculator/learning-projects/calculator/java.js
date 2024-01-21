@@ -68,7 +68,7 @@ function digit(a) {
     disp = a;
     display.textContent = disp;
   }
-  else if (op === '') {
+  else if (op === '' && num1.length <= 13) {
     num1 = num1 + a;
     disp = num1;
     display.textContent = disp;
@@ -78,7 +78,7 @@ function digit(a) {
     disp = a;
     display.textContent = disp;
   }
-  else if (num1 != 'e' && op != '' && num2 != 'e'){
+  else if (num1 != 'e' && op != '' && num2 != 'e' && num2.length <= 13){
     num2 = num2 + a;
     disp = num2;
     display.textContent = disp;
