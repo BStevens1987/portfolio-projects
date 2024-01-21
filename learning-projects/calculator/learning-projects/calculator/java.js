@@ -233,7 +233,7 @@ buttonClear.addEventListener('click', () => {
 });
 
 const buttonExponent = document.querySelector("#buttonr1c3");
-buttonExponent.textContent = '**';
+buttonExponent.textContent = 'x^n';
 buttonExponent.addEventListener('click', () => {
   calculator('exponent');
 });
