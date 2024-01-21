@@ -34,6 +34,7 @@ html, body {
 .button {
   flex: 1;
   background-color: rgb(83, 140, 187);
+  font-size: 50px;
 }
 
 [id*="c4"] {
