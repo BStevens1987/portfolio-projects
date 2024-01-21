@@ -36,6 +36,7 @@ let num1 = 'e';
 let num2 = 'e';
 let op = '';
 let disp = '';
+let hbutton = '';
 
 function operate(a, b, operation) {
   if (operation == 'add') {
@@ -63,6 +64,32 @@ function operate(a, b, operation) {
     op = 'exponent';
     return exponent(a, b);
   }
+};
+
+function colorShift(operation, color) {
+  if (operation == 'add') {
+    document.querySelector('#buttonr3c4').style.backgroundColor = color;
+  }
+  else if (operation == 'subtract') {
+    document.querySelector('#buttonr4c4').style.backgroundColor = color;
+  }
+  else if (operation == 'multiply') {
+    document.querySelector('#buttonr1c4').style.backgroundColor = color;
+  }
+  else if (operation == 'divide') {
+    document.querySelector('#buttonr2c4').style.backgroundColor = color;
+  }
+  else if (operation == 'exponent') {
+    document.querySelector('#buttonr1c3').style.backgroundColor = color;
+  }
+};
+
+function colorShiftAll(color) {
+  document.querySelector('#buttonr3c4').style.backgroundColor = color;
+  document.querySelector('#buttonr4c4').style.backgroundColor = color;
+  document.querySelector('#buttonr1c4').style.backgroundColor = color;
+  document.querySelector('#buttonr2c4').style.backgroundColor = color;
+  document.querySelector('#buttonr1c3').style.backgroundColor = color;
 };
 
 const display = document.querySelector('#display');
@@ -94,6 +121,7 @@ function reset(show) {
   num1 = 'e';
   num2 = 'e';
   op = '';
+  colorShiftAll('rgb(20, 122, 109)');
   disp = String(show);
   display.textContent = disp;
 };
@@ -112,12 +140,16 @@ function clear () {
 function calculator(operator) {
   if (op=== '' || num1 === 'e' || num2 === 'e') {
     op = operator;
+    colorShiftAll('rgb(20, 122, 109)');
+    colorShift(operator, 'rgb(39, 165, 148)');
   }
   else if (op == 'divide' && Number(num2) == 0) {
     reset('Nice Try');
   }
   else {
+    colorShiftAll('rgb(20, 122, 109)');
     num1 = operate(num1, num2, op);
+    colorShift(operator, 'rgb(39, 165, 148)');
     op = operator;
     num2 = 'e';
     disp = num1;
@@ -180,6 +212,7 @@ function equals () {
     reset('Nice Try');
   }
   else {
+    colorShiftAll('rgb(20, 122, 109)');
     num1 = operate(num1, num2, op);
     num2 = 'e';
     disp = num1;
