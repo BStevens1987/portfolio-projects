@@ -90,18 +90,27 @@ function calculator(operator) {
     op = operator;
   }
   else {
-    op = operator;
     num1 = operate(num1, num2, op);
+    op = operator;
     num2 = 'e';
     disp = num1;
     display.textContent = disp;
   }
 };
 
+function allClear() {
+  num1 = 'e';
+  num2 = 'e';
+  op = '';
+  disp = '';
+  display.textContent = disp;
+};
+
 console.log(disp);
 
 const buttonAC = document.querySelector("#buttonr1c1");
 buttonAC.textContent = 'AC';
+buttonAC.addEventListener('click', allClear);
 
 const buttonSign = document.querySelector("#buttonr1c2");
 buttonSign.textContent = '+/-';
@@ -201,3 +210,13 @@ buttonPercent.textContent = '%';
 
 const buttonEquals = document.querySelector("#buttonr5c4");
 buttonEquals.textContent = '=';
+buttonEquals.addEventListener('click', () => {
+  if (op==='' || num1 === 'e' || num2 === 'e') {
+  }
+  else {
+    num1 = operate(num1, num2, op);
+    num2 = 'e';
+    disp = num1;
+    display.textContent = disp;
+  }
+});
