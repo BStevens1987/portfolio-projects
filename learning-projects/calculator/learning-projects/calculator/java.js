@@ -93,6 +93,17 @@ function reset(show) {
   display.textContent = disp;
 };
 
+function clear () {
+  if (op=== '' || num1 === 'e') {
+    reset('');
+  }
+  else if (op != '') {
+    num2 = 'e';
+    disp = '';
+    display.textContent = disp;
+  };
+};
+
 function calculator(operator) {
   if (op=== '' || num1 === 'e' || num2 === 'e') {
     op = operator;
@@ -179,6 +190,9 @@ buttonAC.addEventListener('click', () => {
 
 const buttonClear = document.querySelector("#buttonr1c2");
 buttonClear.textContent = 'C';
+buttonClear.addEventListener('click', () => {
+  clear();
+});
 
 const buttonExponent = document.querySelector("#buttonr1c3");
 buttonExponent.textContent = '**';
