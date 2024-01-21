@@ -265,9 +265,7 @@ buttonDecimal.addEventListener('click', () => {
 const buttonSign = document.querySelector("#buttonr5c3");
 buttonSign.textContent = '+/-';
 buttonSign.addEventListener('click', () => {
-  sign();buttonPercent.addEventListener('click', () => {
-    sign();
-  });
+  sign();
 });
 
 const buttonEquals = document.querySelector("#buttonr5c4");
