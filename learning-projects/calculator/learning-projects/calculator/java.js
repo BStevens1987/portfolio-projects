@@ -85,29 +85,6 @@ function digit(a) {
   }
 };
 
-function decimal() {
-  if (num1 === 'e') {
-    num1 = '0.';
-    disp = '0.';
-    display.textContent = disp;
-  }
-  else if (op === '' && !num1.includes('.')) {
-    num1 = num1 + '.';
-    disp = num1;
-    display.textContent = disp;
-  }
-  else if (num1 != 'e' && op != '' && num2 === 'e'){
-    num2 = '0.';
-    disp = '0.';
-    display.textContent = disp;
-  }
-  else if (num1 != 'e' && op != '' && num2 != 'e' && !num2.includes('.')){
-    num2 = num2 + '.';
-    disp = num2;
-    display.textContent = disp;
-  }
-};
-
 function reset(show) {
   num1 = 'e';
   num2 = 'e';
@@ -132,6 +109,54 @@ function calculator(operator) {
   }
 };
 
+function decimal() {
+  if (num1 === 'e') {
+    num1 = '0.';
+    disp = '0.';
+    display.textContent = disp;
+  }
+  else if (op === '' && !num1.includes('.')) {
+    num1 = num1 + '.';
+    disp = num1;
+    display.textContent = disp;
+  }
+  else if (num1 != 'e' && op != '' && num2 === 'e'){
+    num2 = '0.';
+    disp = '0.';
+    display.textContent = disp;
+  }
+  else if (num1 != 'e' && op != '' && num2 != 'e' && !num2.includes('.')){
+    num2 = num2 + '.';
+    disp = num2;
+    display.textContent = disp;
+  }
+};
+
+function sign() {
+  if (num1 === 'e') {
+  }
+  else if (op === '' && !num1.includes('-')) {
+    num1 = '-' + num1;
+    disp = num1;
+    display.textContent = disp;
+  }
+  else if (op === '' && num1.includes('-')) {
+    num1 = num1.replace('-', '');
+    disp = num1;
+    display.textContent = disp;
+  }
+  else if (num1 != 'e' && op != '' && num2 != 'e' && !num2.includes('-')){
+    num2 = '-' + num2;
+    disp = num2;
+    display.textContent = disp;
+  }
+  else if (num1 != 'e' && op != '' && num2 != 'e' && num2.includes('-')){
+    num2 = num2.replace('-', '');
+    disp = num2;
+    display.textContent = disp;
+  }
+};
+
 const buttonAC = document.querySelector("#buttonr1c1");
 buttonAC.textContent = 'AC';
 buttonAC.addEventListener('click', () => {
@@ -140,6 +165,9 @@ buttonAC.addEventListener('click', () => {
 
 const buttonSign = document.querySelector("#buttonr1c2");
 buttonSign.textContent = '+/-';
+buttonSign.addEventListener('click', () => {
+  sign();
+});
 
 const buttonExponent = document.querySelector("#buttonr1c3");
 buttonExponent.textContent = '**';
@@ -243,7 +271,7 @@ buttonPercent.textContent = '%';
 const buttonEquals = document.querySelector("#buttonr5c4");
 buttonEquals.textContent = '=';
 buttonEquals.addEventListener('click', () => {
-  if (op==='' || num1 === 'e' || num2 === 'e') {
+  if (op=== '' || num1 === 'e' || num2 === 'e') {
   }
   else if (op == 'divide' && Number(num2) == 0) {
     reset('Nice Try');
