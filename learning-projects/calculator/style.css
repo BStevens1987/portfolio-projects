@@ -40,10 +40,10 @@ html, body {
   background-color: rgb(20, 122, 109);
 }
 
-#buttonr1c2, #buttonr1c3 {
+#buttonr1c3 {
   background-color: rgb(20, 122, 109);
 }
 
-#buttonr1c1 {
+#buttonr1c1, #buttonr1c2 {
   background-color: rgb(156, 44, 25);
 }

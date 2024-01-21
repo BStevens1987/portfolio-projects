@@ -163,8 +163,8 @@ buttonAC.addEventListener('click', () => {
   reset('');
 });
 
-const buttonPercent = document.querySelector("#buttonr1c2");
-buttonPercent.textContent = '√';
+const buttonClear = document.querySelector("#buttonr1c2");
+buttonClear.textContent = 'C';
 
 const buttonExponent = document.querySelector("#buttonr1c3");
 buttonExponent.textContent = '**';
